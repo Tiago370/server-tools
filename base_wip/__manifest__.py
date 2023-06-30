@@ -15,6 +15,7 @@
     ],
     "data": [
         "security/base_wip.xml",
+        "security/base_wip_report.xml",
         "views/base_abstract_wip.xml",
         "views/base_wip.xml",
     ],

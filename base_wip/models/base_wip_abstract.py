@@ -118,7 +118,8 @@ class BaseWipAbstract(models.AbstractModel):
         compute="_compute_time",
     )
 
-    @api.model
+    # @api.model
+    @api.model_create_multi
     def create(self, vals):
         result = super(BaseWipAbstract, self).create(vals)
         result.wip_ids.start(
@@ -139,6 +140,7 @@ class BaseWipAbstract(models.AbstractModel):
 
 class BaseWipReport(models.Model):
     _name = "base.wip.report"
+    _description = "Base WIP Report"
     _auto = False
 
     model_id = fields.Many2one(comodel_name="ir.model")
@@ -155,7 +157,7 @@ class BaseWipReport(models.Model):
             ("cancelled", "Cancelled"),
             ("exception", "Exception"),
         ],
-        string="State",
+        # string="Wip State",
         index=True,
     )
 

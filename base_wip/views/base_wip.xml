@@ -33,7 +33,7 @@
                         <field name="lead_time_seconds" />
                     </group>
                 </sheet>
-                <div class="oe_chatter" />
+                <!-- <div class="oe_chatter" /> -->
             </form>
         </field>
     </record>
@@ -48,16 +48,19 @@
                 <field name="state" />
                 <group expand="0" string="Group By">
                     <filter
+                        name="filter_model"
                         string="Model"
                         domain="[]"
                         context="{'group_by':'model_id'}"
                     />
                     <filter
+                        name="filter_model"
                         string="Model"
                         domain="[]"
                         context="{'group_by':'model_id'}"
                     />
                     <filter
+                        name="filter_resource"
                         string="Resource"
                         domain="[]"
                         context="{'group_by':'res_id'}"
@@ -88,8 +91,8 @@
         <field name="arch" type="xml">
             <pivot string="Wip" display_quantity="true">
                 <field name="model_id" />
-                <field name="lead_time" type="measure" />
-                <field name="lead_time_seconds" type="measure" />
+                <!-- <field name="lead_time" type="measure" /> -->
+                <!-- <field name="lead_time_seconds" type="measure" /> -->
             </pivot>
         </field>
     </record>
@@ -100,8 +103,8 @@
         <field name="arch" type="xml">
             <graph string="Wip">
                 <field name="model_id" />
-                <field name="lead_time" type="measure" />
-                <field name="lead_time_seconds" type="measure" />
+                <!-- <field name="lead_time" type="measure" /> -->
+                <!-- <field name="lead_time_seconds" type="measure" /> -->
             </graph>
         </field>
     </record>

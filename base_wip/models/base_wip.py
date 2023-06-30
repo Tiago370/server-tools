@@ -28,6 +28,7 @@ def display_time(seconds, granularity=2):
 
 class BaseWip(models.Model):
     _name = "base.wip"
+    # _inherit = "base.wip.abstract"
     _description = "Base Wip"
 
     @api.model
@@ -95,13 +96,16 @@ class BaseWip(models.Model):
     )
 
     lead_time = fields.Char(
-        # string="Lead Time",
+        store="True",
         compute="_compute_lead_time",
+        compute_sudo=True,
+        digits=(12, 6),
+        readonly=True,
     )
 
     wip_state = fields.Selection(
         selection=_get_states,
-        string="State",
+        # string="State",
         index=True,
     )
 

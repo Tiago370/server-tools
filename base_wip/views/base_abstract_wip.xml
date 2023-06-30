@@ -2,7 +2,7 @@
 <!-- Copyright 2020 KMEE INFORMATICA LTDA
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <odoo>
-
+<!--
     <record model="ir.ui.view" id="base_wip_abstract_form_view">
         <field name="name">base.wip.abstract.form (in base_wip)</field>
         <field name="model">base.wip.abstract</field>
@@ -37,7 +37,7 @@
                 <div class="oe_chatter" />
             </form>
         </field>
-    </record>
+    </record> -->
 
     <record id="view_base_wip_report_graph" model="ir.ui.view">
         <field name="name">base.wip.report.graph</field>
