@@ -4,12 +4,15 @@
 {
     "name": "Base Wip",
     "summary": """
-        KMEE""",
+        Base Work In Progress""",
     "version": "16.0.1.0.0",
     "license": "AGPL-3",
     "author": "KMEE,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/server-tools",
     "depends": [],
-    "data": [],
+    "data": [
+        "security/base_wip.xml",
+        "views/base_wip.xml",
+    ],
     "demo": [],
 }
