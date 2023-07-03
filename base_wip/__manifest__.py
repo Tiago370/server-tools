@@ -1,5 +1,5 @@
-# Copyright 2023 KMEE
-# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+# Copyright 2020 KMEE
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
     "name": "Base Wip",
@@ -9,9 +9,14 @@
     "license": "AGPL-3",
     "author": "KMEE,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/server-tools",
-    "depends": [],
+    "depends": [
+        "base",
+        "board",
+    ],
     "data": [
         "security/base_wip.xml",
+        "security/base_wip_report.xml",
+        "views/base_abstract_wip.xml",
         "views/base_wip.xml",
     ],
     "demo": [],
