@@ -3,26 +3,41 @@
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo>
 
-    <record model="ir.ui.view" id="base_wip_form_view">
+<record model="ir.ui.view" id="base_wip_form_view">
         <field name="name">base.wip.form (in base_wip)</field>
         <field name="model">base.wip</field>
         <field name="arch" type="xml">
-            <form>
+            <form noedit="1">
                 <header>
-                    <!-- TODO -->
+                    <button name="stop" string="Stop" type="object" />
+                    <field name="state" widget="statusbar" />
                 </header>
                 <sheet>
-                    <!-- TODO -->
                     <group>
-                        <field name="name" />
+                        <field name="model_id" />
+                        <field name="res_id" />
+                        <field name="wip_state" />
+                    </group>
+                    <group>
+                        <group>
+                            <field name="date_start" />
+                            <field name="date_hour_start" />
+                        </group>
+                        <group>
+                            <field name="date_stop" />
+                            <field name="date_hour_stop" />
+                        </group>
+                    </group>
+                    <group>
+                        <field name="wip_time" />
+                        <field name="wip_time_seconds" />
                     </group>
                 </sheet>
-                <div class="oe_chatter" />
+                <!-- <div class="oe_chatter" /> -->
             </form>
         </field>
     </record>
-
-    <record model="ir.ui.view" id="base_wip_search_view">
+    <!-- <record model="ir.ui.view" id="base_wip_search_view">
         <field name="name">base.wip.search (in base_wip)</field>
         <field name="model">base.wip</field>
         <field name="arch" type="xml">
@@ -30,32 +45,31 @@
 
             </search>
         </field>
-    </record>
+    </record> -->
 
-    <record model="ir.ui.view" id="base_wip_tree_view">
+    <!-- <record model="ir.ui.view" id="base_wip_tree_view">
         <field name="name">base.wip.tree (in base_wip)</field>
         <field name="model">base.wip</field>
         <field name="arch" type="xml">
             <tree>
-                <!-- TODO -->
                 <field name="name" />
             </tree>
         </field>
-    </record>
-
+    </record> -->
+<!--
     <record model="ir.actions.act_window" id="base_wip_act_window">
-        <field name="name">Base Wip</field> <!-- TODO -->
+        <field name="name">Base Wip</field>
         <field name="res_model">base.wip</field>
         <field name="view_mode">tree,form</field>
         <field name="domain">[]</field>
         <field name="context">{}</field>
-    </record>
+    </record> -->
 
-    <record model="ir.ui.menu" id="base_wip_menu">
+    <!-- <record model="ir.ui.menu" id="base_wip_menu">
         <field name="name">Base Wip</field>
-        <field name="parent_id" ref="xmlid of parent menu" /> <!-- TODO -->
+        <field name="parent_id" ref="xmlid of parent menu" />
         <field name="action" ref="base_wip_act_window" />
-        <field name="sequence" eval="16" /> <!-- TODO -->
-    </record>
+        <field name="sequence" eval="16" />
+    </record> -->
 
 </odoo>

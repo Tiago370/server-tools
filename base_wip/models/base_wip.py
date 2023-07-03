@@ -11,6 +11,28 @@ class BaseWip(models.Model):
     _name = "base.wip"
     _description = "Base Wip"
 
+    @api.model
+    def _get_states(self):
+        return [
+            ("draft", "New"),
+            ("open", "In Progress"),
+            ("pending", "Pending"),
+            ("done", "Done"),
+            ("cancelled", "Cancelled"),
+            ("exception", "Exception"),
+        ]
+
+    model_id = fields.Many2one(
+        comodel_name="ir.model",
+        string="Model",
+        index=True,
+    )
+
+    res_id = fields.Integer(
+        string="Resource ID",
+        index=True,
+    )
+
     state = fields.Selection(
         # string="State",
         selection=[
@@ -43,7 +65,18 @@ class BaseWip(models.Model):
         required=False,
     )
 
+    wip_time_seconds = fields.Float(
+        # string="Lead Time Float",
+        compute="_compute_lead_time",
+    )
+
     wip_time = fields.Float(string="Duration", compute="_compute_lead_time", store=True)
+
+    wip_state = fields.Selection(
+        selection=_get_states,
+        # string="State",
+        index=True,
+    )
 
     user_id = fields.Many2one(
         comodel_name="res.users",
